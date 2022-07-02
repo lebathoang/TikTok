@@ -17,6 +17,7 @@
     font-size: 16px;
     caret-color: var(--primary);
     line-height: 22px;
+    padding-right: 40px;
     background: transparent;
     font-family: var(--font-family);
   }
@@ -54,7 +55,7 @@
   font-size: 15px;
 }
 .loading {
-  animation: spinner 1.5s linear infinite;
+  animation: spinner 2s linear infinite;
 }
 @keyframes spinner {
   from {

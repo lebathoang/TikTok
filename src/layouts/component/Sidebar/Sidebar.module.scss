@@ -1,0 +1,83 @@
+.wrap {
+  position: relative;
+  flex: 0 0 356px;
+}
+.div-scrollbar {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  top: 61px;
+  bottom: 0;
+  padding-right: 8px;
+  background: rgba(255, 255, 255, 1);
+  position: fixed;
+  z-index: 99;
+  &:hover {
+    overflow-y: overlay;
+  }
+}
+.wrapper {
+  width: 356px;
+  padding: 20px 0px 26px 8px;
+  margin-left: -6px;
+}
+.acount-title {
+  font-size: 14px;
+  line-height: 20px;
+  padding: 0 8px;
+  margin-bottom: 8px;
+}
+.all-item {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  margin-top: 8px;
+  padding: 0 8px;
+  color: var(--primary);
+  background-color: transparent;
+  cursor: pointer;
+}
+.d-flex {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.outside-item {
+  margin-bottom: 8px;
+  width: 332px;
+  height: 48px;
+}
+.link-item {
+  color: rgba(22, 24, 35, 0.5);
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 17px;
+  display: inline-block;
+  margin-right: 6px;
+  margin-top: 5px;
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+.copyright {
+  color: rgba(22, 24, 35, 0.5);
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 17px;
+  display: inline-block;
+  margin-right: 6px;
+  margin-top: 5px;
+}
+.suggest-item {
+  position: relative;
+  &:hover .hover-item {
+    display: flex;
+  }
+}
+.hover-item {
+  position: absolute;
+  z-index: 1;
+  display: none;
+}

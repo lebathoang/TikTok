@@ -5,7 +5,7 @@ import { SearchIcon } from '~/Components/Icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useDebounce } from '~/hooks';
 
-import * as searchServices from '~/apiServices/searchServises';
+import * as searchServices from '~/services/searchServise';
 import HeadlessTippy from '@tippyjs/react/headless';
 import AccountItems from '~/Components/AccountItems';
 import classNames from 'classnames/bind';
@@ -17,23 +17,23 @@ function Search() {
   const [searchResult, setSearchResult] = useState([]);
   const [showResult, setShowResult] = useState(true);
   const [loading, setLoading] = useState(false);
-  const debounced = useDebounce(searchValue, 500);
+  const debouncedValue = useDebounce(searchValue, 500);
 
   const inputRef = useRef();
 
   useEffect(() => {
-    if (!debounced.trim()) {
+    if (!debouncedValue.trim()) {
       setSearchResult([]);
       return;
     }
     const fetchApi = async () => {
       setLoading(true);
-      const result = await searchServices.search(debounced);
+      const result = await searchServices.search(debouncedValue);
       setSearchResult(result);
       setLoading(false);
     };
     fetchApi();
-  }, [debounced]);
+  }, [debouncedValue]);
 
   const handleClear = () => {
     setSearchValue('');
